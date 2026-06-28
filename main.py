@@ -1,18 +1,18 @@
-import random
-import string
+import time
 
-a = int(input("Enter your password length: "))
-b = string.ascii_letters + string.digits + string.punctuation
-c = "".join(random.choice(b) for _ in range(a))
+print("type the following sentence exactly as shown:\n")
+print("'python is super fun'\n")
 
-print("-" * 30)
-print(f"your password: {c}")
-print(f"password length: {len(c)} characters")
-print("-" * 30)
+input("press enter when you are ready to start...")
+start = time.time()
 
-if a < 8:
-    print("WARNING: your password is too short! (use 8+)")
+typed = input("Type hear: ")
+
+end = time.time()
+
+Total_time = round(end - start, 2)
+
+if typed == "python is super fun":
+    print(f"\nGreat! Time taken {Total_time} second")
 else:
-    print("strong password")
-    
-    
+    print("\nThe sentence didn't match. Try again! ")
